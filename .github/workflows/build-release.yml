@@ -2,7 +2,6 @@ name: Build Releases
 on:
   push:
     branches:
-      - main
       - master
 env:
   CARGO_TERM_COLOR: always
@@ -49,7 +48,7 @@ jobs:
           prerelease: ${{ contains(github.ref, '-') }}
 
   build-mac:
-    runs-on: macos-latest
+    runs-on: macos-11
     env:
       RUST_BACKTRACE: full
     strategy:
